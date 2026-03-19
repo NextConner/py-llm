@@ -54,9 +54,8 @@ def add_todo(task:str) -> str:
     
     return f"Task '{task}' added with ID {new_id}."
 
-print(type(get_weather))
-
 # 查看todo 工具
+@tool
 def list_todos() -> str:
     """List all current todo item"""
     if not os.path.exists(TODO_FILE):
@@ -101,8 +100,7 @@ def complete_todo(todo_id: int) -> str:
 # 构建 agent 
 agent  = CodeAgent(
     tools=[add_todo,list_todos,get_weather,complete_todo],
-    model = model,
-    add_base_tools=False # 不加载默认工具
+    model = model
 )
 
 # 
