@@ -352,7 +352,7 @@ agent = CodeAgent(
         calculate_discrete_function,
         calculate_linear_distribution,
         SuperheroPartyThemeTool(),
-	FinalAnswerTool()
+	    FinalAnswerTool()
     ], 
     model=InferenceClientModel(),
     max_steps=10,
